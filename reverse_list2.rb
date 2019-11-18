@@ -18,20 +18,18 @@ def printLL(list)
 	end	
 end
 
-def reverseLL(list)
-	stack = []
-	while list != nil
-        stack.push list.value
-    	list = list.nextnode
-	end	
-	
-	newlist = LinkedListNode.new(stack.pop, nil)
-	endnode = newlist
-	while stack.length != 0
-        newnode = LinkedListNode.new(stack.pop, nil)
-        endnode.nextnode = newnode
-        endnode = newnode
-	end	
-	return newlist	
+
+def mutation_reverse(list)
+   newlist = nil
+  while list != nil
+  	 second = list.nextnode
+  	 list.nextnode = newlist	
+    newlist = list 
+    list = second
+  end
+  return newlist
 end
-printLL reverseLL LL 
+
+printLL LL
+puts 
+printLL mutation_reverse LL
