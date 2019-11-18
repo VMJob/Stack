@@ -34,4 +34,4 @@ def reverseLL(list)
 	end	
 	return newlist	
 end
-printLL LL
+printLL reverseLL LL 
